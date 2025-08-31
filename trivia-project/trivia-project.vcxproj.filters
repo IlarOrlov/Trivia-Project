@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\A_Login">
+      <UniqueIdentifier>{2d4bbbd3-3875-49e1-a326-6f6fc1473f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\A_Login">
+      <UniqueIdentifier>{c8561256-6f20-43fe-b116-46ac7e5e1b3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\B_Menu">
+      <UniqueIdentifier>{f1e60434-fc67-4f10-a6a0-9994db51407b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\C_Room">
+      <UniqueIdentifier>{e51d25b3-7768-48ad-ba0f-e30198c2c66a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\E_Game">
+      <UniqueIdentifier>{2ecd6977-4f07-46cb-9d1d-88bb8488bab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\B_Menu">
+      <UniqueIdentifier>{21c9c763-5b67-4b43-b17f-77de3a63bfa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\C_Room">
+      <UniqueIdentifier>{688966f5-d0c0-4cbe-b1ba-c7b66c2d10a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\D_Statistics">
+      <UniqueIdentifier>{c4c4235d-09ee-46bf-be7f-a679391dcb61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions">
+      <UniqueIdentifier>{b8a0d3e6-f891-4fa2-a4c7-f385d7f92ef6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Exceptions">
+      <UniqueIdentifier>{61965733-a407-4603-9cf8-4e626f7364dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Requests">
+      <UniqueIdentifier>{5dfa0b24-6aa6-43fd-8d04-8cabc9056b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Sockets Utils">
+      <UniqueIdentifier>{8134e31d-f3eb-46aa-a8e9-9ae3a0d8c6af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Database">
+      <UniqueIdentifier>{6f0f5065-28be-4205-8a93-e8889c78ef23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions">
+      <UniqueIdentifier>{277a7e4c-3fd7-4077-974d-45a6913e62bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions\Json Related">
+      <UniqueIdentifier>{e6e2b610-637f-4f6e-bf35-3308af8d5a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions\Database">
+      <UniqueIdentifier>{1b262683-d258-478d-b982-a347716ac02b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Database\Mongo">
+      <UniqueIdentifier>{5345aff9-afde-42f0-8f5e-368c3e735291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Database\Sqlite">
+      <UniqueIdentifier>{95c5b681-6b3b-42c1-bf48-4acdc3ab46d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions\Database\Sqlite">
+      <UniqueIdentifier>{4b01acc7-7323-404f-9de8-8a9a3c0e1771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions\Database\Mongo">
+      <UniqueIdentifier>{9e1a13dc-1ace-41b4-ab71-971b2e3b0acc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Extentions\Sockets Utils">
+      <UniqueIdentifier>{519152cc-04bf-4e30-9595-004b868ecfcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\B_Menu\statistics">
+      <UniqueIdentifier>{6dd3c9bd-757c-4b5b-9984-eee84744d827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Extentions\Exceptions\Json">
+      <UniqueIdentifier>{7fc6cb5d-3a8c-427e-b5ff-8849c613545a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommunicatorException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="MyException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Header Files\Extentions\Exceptions\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonRequestPacketDeserializer.h">
+      <Filter>Header Files\Extentions\Exceptions\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonResponsePacketSerializer.h">
+      <Filter>Header Files\Extentions\Exceptions\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="IrreleventRequestException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonUtils.h">
+      <Filter>Header Files\Extentions\Exceptions\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="IDatabase.h">
+      <Filter>Header Files\Extentions\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="SqliteException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestHandlerFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginManager.h">
+      <Filter>Header Files\A_Login</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginRequestHandler.h">
+      <Filter>Header Files\A_Login</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestInfo.h">
+      <Filter>Header Files\Extentions\Requests</Filter>
+    </ClInclude>
+    <ClInclude Include="IRequestHandler.h">
+      <Filter>Header Files\Extentions\Requests</Filter>
+    </ClInclude>
+    <ClInclude Include="IDatabase.h">
+      <Filter>Header Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="SqliteException.h">
+      <Filter>Header Files\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRequestHandler.h">
+      <Filter>Header Files\B_Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestResult.h">
+      <Filter>Header Files\Extentions\Requests</Filter>
+    </ClInclude>
+    <ClInclude Include="Mongo.h">
+      <Filter>Header Files\Extentions\Database\Mongo</Filter>
+    </ClInclude>
+    <ClInclude Include="Address.h">
+      <Filter>Header Files\A_Login</Filter>
+    </ClInclude>
+    <ClInclude Include="SqliteDatabase.h">
+      <Filter>Header Files\Extentions\Database\Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite3.h">
+      <Filter>Header Files\Extentions\Database\Sqlite</Filter>
+    </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticsManager.h">
+      <Filter>Header Files\B_Menu\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomManager.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomData.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="clientSocket.h">
+      <Filter>Header Files\Extentions\Sockets Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomRequests.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="GameResponses.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Header Files\B_Menu\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticsResponses.h">
+      <Filter>Header Files\B_Menu\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticsRequests.h">
+      <Filter>Header Files\B_Menu\statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="TriviaQuestion.h">
+      <Filter>Header Files\E_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuRequests.h">
+      <Filter>Header Files\B_Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomAdminRequestHandler.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="RoomMemberRequestHandler.h">
+      <Filter>Header Files\C_Room</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginRequests.h">
+      <Filter>Header Files\A_Login</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalRequests.h">
+      <Filter>Header Files\Extentions\Requests</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalResponses.h">
+      <Filter>Header Files\Extentions</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuResponses.h">
+      <Filter>Header Files\B_Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Server.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Communicator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonRequestPacketDeserializer.cpp">
+      <Filter>Source Files\Extentions\Json Related</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonResponsePacketSerializer.cpp">
+      <Filter>Source Files\Extentions\Json Related</Filter>
+    </ClCompile>
+    <ClCompile Include="RequestHandlerFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginManager.cpp">
+      <Filter>Source Files\A_Login</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginRequestHandler.cpp">
+      <Filter>Source Files\A_Login</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuRequestHandler.cpp">
+      <Filter>Source Files\B_Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginException.h">
+      <Filter>Header Files\Extentions\Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="SqliteDatabase.cpp">
+      <Filter>Source Files\Extentions\Database\Sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="Mongo.cpp">
+      <Filter>Source Files\Extentions\Database\Mongo</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite3.c">
+      <Filter>Source Files\Extentions\Database\Sqlite</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files\C_Room</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticsManager.cpp">
+      <Filter>Source Files\D_Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomManager.cpp">
+      <Filter>Source Files\C_Room</Filter>
+    </ClCompile>
+    <ClCompile Include="clientSocket.cpp">
+      <Filter>Source Files\Extentions\Sockets Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomAdminRequestHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RoomMemberRequestHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
