@@ -1,0 +1,53 @@
+/* CSS Mini Reset */
+
+* {
+    /* remove scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html, body, div, form, fieldset, legend, label {
+    margin: 0;
+    padding: 0;
+
+    /* disable selection */
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    text-align: left;
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, th, td, caption { font-weight:normal; }
+
+img { border: 0; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+input {
+    font-family: inherit;
+    border-width: 0;
+    outline-width: 0;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: white;
+}
