@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="files/reset.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <link rel="stylesheet" href="files/style.css">
+    <link rel="stylesheet" href="files/animation.css">
+    <script src="files/essentials.js"></script>
+    <title>Trivia</title>
+</head>
+
+<body>
+    <header>
+        <div class="creators">Ilar & Nikol</div>
+        
+        <div class="topMsg topMsg__hide">
+            <div class="topMsg__img"></div>
+            <div class="topMsg__text">not connected!</div>
+        </div>
+    </header>
+
+    <input type="checkbox" id="signup__checkbox" class="hide">
+    <input type="checkbox" id="login__checkbox" class="hide">
+    <input type="checkbox" id="menu__checkbox" class="hide">
+
+    <div class="logBlock">
+        
+        <div class="trivia">Trivia</div>
+        
+        <div class="about">Have fun and enjoy the project!</div>
+    
+        <div class="logOptions">
+            <label for="signup__checkbox" id="signup__button" class="logButton">sign up</label>
+            <label for="login__checkbox" id="login__button" class="logButton">login</label>
+        </div>
+        <div class="subHeader"></div>
+        
+        <form class="signup">       
+            <input type="text" class="signup__username" name="signup__username" placeholder="Username" tabindex="1" required spellcheck="false" autocomplete="off"><br>
+            <input type="password" class="signup__password" name="signup__password" placeholder="Password" tabindex="2" required spellcheck="false" autocomplete="off" oninput="updatePassword(this.value);">
+            
+            <div class="passwordValidation inputHelper">
+                <div class="lowercase">1+ lowercase</div>
+                <div class="uppercase">1+ uppercase</div>
+                <div class="digit">1+ digit</div>
+                <div class="special">1+ special (!@#$%^&*)</div>
+                <div class="length">8+ total</div>
+            </div><br>
+
+            <input type="text" class="signup__email" name="signup__email" placeholder="Email" tabindex="3" required spellcheck="false" autocomplete="off" oninput="updateEmailCompleter(this);">
+            <input type="checkbox" id="emailCompleter__checkbox" class="hide">
+            <div class="emailCompleter inputHelper">
+                <div class="option">gmail.com</div>
+                <div class="sep">|</div>
+                <div class="option">walla.co.il</div>
+                <div class="sep">|</div>
+                <div class="option">yahoo.com</div>
+            </div><br>
+
+            <input type="text" class="signup__phone" name="signup__phone" placeholder="Phone" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this); updatePhone(this);"> <br>
+            <input type="text" class="signup__date" name="signup__date" placeholder="Date Of Birth" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this); updateDate(this);"><br>
+            <input type="text" class="signup__city uppercase" name="signup__city" placeholder="City" required spellcheck="false" autocomplete="off" oninput="removeNonAlphaNumeric(this);"><br>
+            <input type="text" class="signup__street uppercase" name="signup__street" placeholder="Street" required spellcheck="false" autocomplete="off" oninput="removeNonAlphaNumeric(this);">
+            <input type="text" class="signup__apt" name="signup__apt" placeholder="Apt" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this);"><br><br>
+            <div class="signup__invalidData hide"></div>
+            <input type="submit" class="submit" value="Submit" placeholder="Submit">
+        </form>
+
+        <form class="login">
+            <input type="text" class="login__username" name="login__username" placeholder="Username" required spellcheck="false" autocomplete="off"><br>
+            <input type="password" class="login__password" name="login__password" placeholder="Password" required spellcheck="false" autocomplete="off"><br>
+            <div class="login__invalidData hide"></div>
+            <input type="submit" class="submit" value="Submit" placeholder="Submit">
+        </form>
+        
+
+        <input type="checkbox" id="createRoom__checkbox" class="hide menuOption__checkbox">
+        <input type="checkbox" id="showRooms__checkbox" class="hide menuOption__checkbox">
+        <input type="checkbox" id="showStats__checkbox" class="hide menuOption__checkbox">
+
+        <div class="menu">
+            <label for="createRoom__checkbox" class="menuOption">Create Room</label>
+            <label for="showRooms__checkbox" class="menuOption">Show Rooms</label>
+            <label for="showStats__checkbox" class="menuOption">Show Statistics</label>
+        </div> 
+        
+        <div class="createRoom hide">
+            
+            <form class="createRoom__form">
+                
+                <input type="text" class="room__name subHeader" name="room__name" placeholder="Room Name" required spellcheck="false" autocomplete="off" oninput="removeNonAlphaNumeric(this); validateRoomName(this);">
+                
+                <div class="field">
+                    <label class="tta" >Answer Time</label>
+                    <input type="text" class="room__tta" name="room__tta" placeholder="" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this); removeLeadingZero(this); checklimit(this, 50);">
+                </div>
+                <div class="field">
+                    <label>Max Players </label>
+                    <input type="text" class="room__maxplayers" name="room__maxplayers" placeholder="" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this); removeLeadingZero(this); checklimit(this, 50);">
+                </div> 
+                <div class="field">
+                    <label>Questions </label>
+                    <input type="text" class="room__questionCount" name="room__questionCount" placeholder="" required spellcheck="false" autocomplete="off" oninput="removeNonNumeric(this); removeLeadingZero(this); checklimit(this, 10, false);">
+                </div>
+                <input type="submit" class="room__submit" value="Create" placeholder="Create">
+            </form>
+        </div>
+
+        <div class="showRooms hide">
+        </div>        
+        
+
+        <div class="showStats hide">
+            
+            <div class="global">
+                <div class="subHeader">Global</div>
+                <img src="img/loadingSymbol.gif" alt="loading..." class="loading hide">
+                <div class="keys">
+                </div>
+                <div class="values">
+                </div>
+            </div>
+            
+            <div class="sep"></div>
+
+            <div class="personal">
+                <div class="subHeader">Personal</div>
+                <div class="keys">
+                    <div class="answerTime item">Answer Time</div>
+                    <div class="correctAnswers item">Correct Answers</div>
+                    <div class="totalAnswers item">Total Answers</div>
+                    <div class="gamesPlayed item">Games Played</div>
+                </div>
+                <div class="values">
+                    <div class="answerTime__val item">_</div>
+                    <div class="correctAnswers__val item">_</div>
+                    <div class="totalAnswers__val item">_</div>
+                    <div class="gamesPlayed__val item">_</div>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="roomLobby">
+            <div class="roomLobby__subHeader subHeader"></div>
+            <div class="roomLobby__admin"></div>
+            <div class="roomLobby__players"></div>
+        </div>
+
+
+        <label for="menu__checkbox" class="logoutBlock">
+            <img src="img/goback.png" alt="" class="gobackSymbol">
+            <div class="logout">LOGOUT</div>
+        </label>
+    </div>
+
+    <script src="files/global.js"></script>
+    <script src="files/client.js"></script>
+</body>
+</html>

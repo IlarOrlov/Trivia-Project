@@ -1,0 +1,871 @@
+/*==============
+    Global
+================*/
+
+:root {
+    --header_font: "Product Sans Black Italic";
+    --sub_header_font: "Product Sans Bold";
+    --explaination_font: "Product Sans Medium Italic";
+    --selected_font: "Product Sans Medium Regular";
+    --blue: rgba(5, 124, 202, 0.637);
+    --red: #E82127;
+    --green: rgb(67, 182, 5);
+}
+
+html,
+body {
+    background: url("img/backgroundImg.png") no-repeat center;
+    background-size: cover;
+
+    color: white;
+    font-family: "Product Sans Light Regular";
+    font-size: 14px;
+
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;    
+}
+
+.subHeader {
+    font-family: "Product Sans Medium Regular";
+    font-size: 2.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .logBlock .subHeader {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hide,
+#menu__checkbox:checked ~ .logBlock :is(.about, .logButton) {
+    display: none !important;
+}
+
+/*==============
+    Header
+================*/
+
+header {
+    height: 25px;
+    margin: 10px 20px;
+    position: relative;
+	line-height: 25px;
+}
+
+header .creators {
+    position: absolute;
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 101, 101, 0.904) 11%,
+        orange 22%,
+        yellow 33%,
+        rgb(33, 196, 33) 45%,
+        rgb(0, 162, 255) 56%,
+        violet 67%,
+        rgba(255, 101, 101, 0.904) 78%,
+        orange 99.8%
+    );
+    background-size: 400%;
+
+    font-family: var(--explaination_font);
+    font-size: 1.2rem;
+
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation-delay: 2s;
+    animation: rainbow 6s linear infinite;
+}
+
+/* -- popup -- */
+
+header .topMsg {
+    position: absolute;
+    background-color: var(--blue);
+    box-shadow: 0px 2px 5px 1px rgb(64 60 67 / 20%);
+    left: 50%;
+    top: 0;
+    padding: 2px 14px;
+    transform: translate(-50%, 0);
+    z-index: 1;
+
+    border-radius: .5rem;
+}
+
+header .topMsg__hide {
+  top: -100px;
+  transition: top 0.5s linear 1s;
+}
+
+header .topMsg__bold {
+  animation: bold 1s linear;
+}
+
+header .topMsg * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.topMsg .topMsg__text,
+.room__onlineStatus {
+  color: white;
+}
+
+.topMsg .topMsg__text__notConnected {
+  color: rgb(255, 0, 0);
+}
+
+.topMsg .topMsg__text {
+  letter-spacing: 2px;
+  font-family: var(--sub_header_font);
+}
+
+.topMsg .topMsg__img {
+  background: url("img/x.png") no-repeat center;
+  background-size: contain;
+
+  height: 14px;
+  width: 14px;
+  margin-right: 4px;
+
+}
+
+.topMsg .topMsg__img__connected {
+  background-image: url("img/swoosh.png");
+}
+
+.topMsg .topMsg__text__connected,
+.room__onlineStatus {
+  color: rgb(105, 201, 54);
+}
+
+/*==============
+    Log Block
+================*/
+
+.logBlock {
+  position: absolute;
+  background-color: var(--blue);
+
+  box-shadow: 0px 2px 5px 1px rgb(64 60 67 / 16%);
+  text-align: center;
+
+  left: 50%;
+  top: 50%;
+  height: 200px;
+  width: 85%;
+  transform: translate(-50%, -50%);
+
+  border-radius: 2rem;
+
+  transition: height 0.8s, width 0.8s;
+  overflow: hidden;
+}
+
+#menu__checkbox:checked ~ .logBlock {
+  width: 90%;
+  height: 80%;
+  max-width: 800px;
+  min-height: 280px;
+
+  transition: all 0.8s;
+}
+
+input[type="checkbox"]:checked ~ .logBlock {
+  height: 85%;
+  transition: all 0.8s;
+}
+
+/* -- Trivia Night Title -- */
+
+.logBlock .trivia {
+  font-family: var(--header_font);
+  font-size: 60px;
+  margin: 20px 0 0 15px;
+}
+
+#menu__checkbox:checked ~ .logBlock .trivia {
+    cursor: pointer;
+}
+
+/* -- Log Buttons -- */
+
+.logBlock .logButton {
+	display: inline-block;
+	background-color: rgb(221, 224, 223, 0.2);
+
+	margin: 25px 10px;
+	padding: 8px 0;
+	width: 120px;
+	border-radius: 0.6rem;
+}
+
+#signup__checkbox:checked ~ .logBlock #signup__button,
+#login__checkbox:checked ~ .logBlock #login__button,
+.logBlock .logButton:active {
+    font-family: var(--selected_font);
+}
+
+.logBlock .logButton:active {
+  padding: 7px 0;
+  margin: 26px 10px;
+}
+
+.uppercase {
+  text-transform: capitalize;
+}
+
+/*==============
+    Log Form
+================*/
+
+.logBlock form {
+    position: relative;
+
+    height: 0;
+    width: 200px;
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+#signup__checkbox:checked ~ .logBlock .signup,
+#login__checkbox:checked ~ .logBlock .login {
+    height: 65%;
+    margin: 5px auto;
+    overflow: visible;
+}
+
+input {
+    margin: 4px 0;
+    border: 2px solid transparent;
+    border-radius: 0.8rem;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+}
+
+input::selection {
+  background-color: pink;
+}
+
+/* ===============
+    Signup Form 
+==================*/
+
+.signup .signup__apt {
+  position: absolute;
+  right: 0;
+  width: 20%;
+}
+
+.signup .signup__street {
+  position: absolute;
+  left: 0;
+  width: 75%;
+}
+
+.signup .signup__date,
+.signup .signup__email {
+  margin-bottom: 15px;
+}
+
+.signup .signup__email,
+.signup .signup__phone {
+    transition: margin-top .5s;
+}
+
+.signup .passwordValidation .valid {
+    color: transparent;
+    transition: color .4s;
+}
+
+
+.signup .passwordValidation {
+    position: absolute;
+
+    text-align: left;
+    text-align: -webkit-left;
+    color: transparent;
+
+    height: 0;
+    left: 20%;
+    right: 20%;
+
+    z-index: -1;
+    border-radius: 1rem;
+    padding: 1rem;
+
+    transition: left .3s, right .3s, height .3s, background-color 0s ease .2s, color .4s;
+}
+
+
+.signup .emailCompleter,
+.signup__password:focus ~ .passwordValidation {  
+    background-color: rgba(255, 255, 255, 0.301);
+    font-family: var(--selected_font);
+}
+
+.signup__password:focus ~ .passwordValidation {
+    color: var(--red);
+    height: 80px;
+    
+    left: 5%;
+    right: 5%;
+    transition: left .3s, right .3s, height .5s ease, color .4s;
+}
+
+
+.signup__password:focus ~ .passwordValidation .valid {    
+    color: lightgreen;
+}
+
+.signup__password:focus ~ .signup__email {
+    margin-top: 120px;
+    transition: margin-top .5s;
+}
+
+
+/* -- email completer -- */
+.emailCompleter {
+    position: absolute;
+
+    text-align: center;
+    color: transparent;
+    height: 0;
+    left: -10%;
+    right: -10%;
+    border-radius: .5rem;
+    z-index: -1;
+
+    transition: left .4s, right .4s, height .3s, color .2s, background-color 0s ease .4s, margin-top 0s .4s;
+}
+
+#emailCompleter__checkbox:checked + .emailCompleter {
+
+    color: rgba(39, 39, 39, 0.822);
+
+    height: 30px;
+    left: -14%;
+    right: -14%;
+
+	margin-top: -10px;
+    z-index: 0;
+    
+    line-height: 30px;
+
+	transition: left .4s, right .4s, color .4s;
+}
+
+#emailCompleter__checkbox:checked ~ .signup__phone,
+.emailCompleter:active ~ .signup__phone {
+    margin-top: 40px;
+    transition: margin-top .5s;
+}
+
+.emailCompleter * {
+    display: inline-block;
+	line-height: normal;
+	vertical-align: middle;
+}
+
+.emailCompleter .option {
+    cursor: pointer;
+	padding: 2px 5px;
+	border-radius: 1rem;
+}
+
+.emailCompleter :is(.option:hover, .option:focus) {
+	background-color: rgba(223, 223, 223, 0.452);
+}
+
+.emailCompleter .option:active {
+	padding: 1px 3px;
+	margin: 1px 2px;
+}
+
+.submit {
+  height: 25px;
+  width: 40%;
+
+  margin-top: 10px;
+
+  border-radius: 1rem;
+}
+
+.submit:focus,
+.submit:active {
+  font-family: var(--selected_font);
+}
+
+.submit:active {
+  margin-top: 12px;
+  height: 21px;
+  font-size: 1.01rem;
+}
+
+/*=========
+    Menu
+===========*/
+
+.menu,
+.logoutBlock,
+.createRoom,
+.showRooms,
+.showStats {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menuOption__checkbox:checked ~ .menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+#menu__checkbox:checked ~ .logBlock .menu,
+#menu__checkbox:checked ~ .logBlock .logoutBlock,
+#createRoom__checkbox:checked ~ .createRoom,
+#showRooms__checkbox:checked ~ .showRooms,
+#showStats__checkbox:checked ~ .showStats {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu {
+  display: flex;
+  position: absolute;
+
+  background-color: transparent;
+  justify-content: space-around;
+  height: 50%;
+  width: 100%;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, 0);
+  transition: opacity .3s, visibility .3s;
+}
+
+#menu__checkbox:checked ~ .logBlock .menu {
+  top: 30%;
+  width: 98%;
+  transition: opacity .5s .4s, visibility .5s .4s;
+}
+
+.menuOption {
+  flex-grow: 1;
+  background-color: rgba(16, 185, 163, 0.829);
+  
+  font-family: var(--sub_header_font);
+  font-size: 1.1rem;
+
+  height: 70px;
+  width: 50px;
+  line-height: 70px;
+  margin: auto 5px;
+
+  padding: 0 10px;
+  border-radius: 1.8rem;
+}
+
+/*===========
+    Logout
+=============*/
+
+.logoutBlock {
+  display: flex;
+  position: absolute;
+
+  left: 6%;
+  bottom: 6%;
+  height: 15px;
+  width: 75px;
+  padding: 6px 10px 6px 6px;
+
+  border-radius: 2rem;
+}
+
+
+#menu__checkbox:checked ~ .logBlock .logoutBlock {
+  background-color: var(--blue);
+  box-shadow: 0px 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+#menu__checkbox:checked ~ .logBlock .logoutBlock:active {
+    font-family: var(--selected_font);
+}
+
+.logoutBlock .logout {
+    font-size: .9rem;
+    letter-spacing: 1px;
+}
+
+.logoutBlock .gobackSymbol {
+    width: 18px;
+    height: 100%;
+    filter: invert(100%);
+}
+
+/*===============
+    Menu Options
+=================*/
+
+/* -- create room -- */
+
+.createRoom {
+  width: 100%;
+}
+
+.logBlock .createRoom .createRoom__form {
+  height: 400px;
+  width: 250px;
+}
+
+.createRoom__form .field {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  font-size: 1.4rem;
+  font-family: var(--selected_font);
+}
+
+.createRoom__form .field * {
+  position: absolute;
+  letter-spacing: 2px;
+}
+
+.createRoom__form label {
+  left: 0;
+  cursor: auto;
+  width: 150px;
+  text-align: left;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.createRoom__form .field input[type="text"] {
+  right: 0;
+  top: calc(50% - 1rem);
+  width: 65px;
+  height: 2rem;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.createRoom__form .room__name {
+  
+  background-color: transparent;
+  color: white;
+
+  width: 200px;
+  height: 50px; 
+  
+  border-bottom: 2px solid rgba(0, 0, 0, 0.192);
+  border-radius: 4px;
+  margin-bottom: 20px;
+
+}
+
+.createRoom__form .room__name::selection {
+  background-color: rgba(173, 173, 173, 0.514);
+}
+
+
+.createRoom__form .room__name::placeholder {
+  color: rgba(255, 255, 255, 0.212);
+}
+
+.createRoom__form .room__submit {
+  
+  background-color: rgba(14, 38, 66, 0.452);
+  box-shadow: 0px 2px 5px 1px rgb(0 0 0 / 20%);
+  color: white;
+
+  padding: 5px;
+  margin-top: 15px;
+  height: unset;
+  font-size: 1.2rem;
+  border-radius: .7rem;
+  letter-spacing: 1px;
+  width: 100px;
+}
+
+.createRoom__form .room__submit:active {
+  padding: 3px 5px;
+  margin-top: 17px;
+  width: 105px;
+  font-size: 1.1rem;
+}
+
+
+/* -- show rooms -- */
+
+.showRooms {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 80%;
+  left: 10%;
+  margin-top: 10px;
+  overflow-y: auto;
+}
+
+
+.showRooms .room {
+  display: flex;
+  background-color: white;
+  flex-grow: 1;
+
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: .5rem;
+}
+
+.showRooms .room__full {
+    background-color: rgba(201, 201, 201, 0.479);
+}
+
+.showRooms .room * {
+  flex-grow: 1;
+  color: black;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.showRooms .room div {
+  width: 15%;
+  overflow-x: scroll;
+  font-family: var(--selected_font);
+}
+
+.showRooms .room span {
+  width: 10px;
+  font-size: 1.2rem;
+}
+
+.room .room__admin {
+  background-image: linear-gradient(
+      to right,
+      rgb(0, 162, 255) 20%,
+      rgba(255, 101, 101, 0.904) 40%,
+      orange 60%,
+      violet 80%,
+      rgb(0, 162, 255) 100%
+  );
+background-size: 400%;
+
+
+color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+animation-delay: 2s;
+animation: rainbow 2s linear infinite;
+}
+
+.room .room__name:hover {
+  opacity: 0.75;
+
+  background-color: rgba(192, 191, 191, 0.63);
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+.room .room__offlineStatus {
+  color: var(--red) 
+}
+.room .room__onlineStatus {
+  color: var(--green);
+}
+
+.showRooms .room__full .room__name:hover {
+    cursor: auto;
+}
+
+/*===============
+    Show Statistics
+=================*/
+
+
+.showStats {
+  display: flex;
+  height: 40vh;
+  margin-top: 30px;
+
+  transition: opacity .4s .3s, visibility .4s .3s;
+}
+
+.showStats .loading {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+  
+  left: 50%;
+  top: 50%;
+  
+  transform: translate(-50%, -50%);
+}
+
+.showStats .values,
+.showStats .keys {
+  display: inline-block;
+  height: 200px;
+  letter-spacing: 2px;
+}
+
+.showStats .values .item {
+  text-align: center;
+}
+
+.showStats .global { 
+  font-family: var(--selected_font);
+}
+
+.showStats .global,
+.showStats .personal {
+  
+  position: relative;
+  flex-grow: 1;
+  
+  width: 100px;
+  height: 100%;
+  
+  font-size: 1.2rem;
+  overflow-y: scroll;
+}
+
+.showStats .item {
+  text-align: left;
+  margin: 15px;
+} 
+
+.showStats .sep {
+  background-color: rgba(0, 0, 0, 0.178);
+  height: 100%;
+  width: 1px;
+  border-radius: 1rem;    
+}
+
+/* -- Top Places -- */
+.showStats .global .firstPlace {
+  color:gold;
+  font-size: 1.5rem;
+}
+.showStats .global .secPlace {
+  color:silver;
+  font-size: 1.4rem;
+}
+.showStats .global .thirdPlace {
+  color:#ffac75;
+  font-size: 1.3rem;
+}
+
+
+
+/*===============
+    Room Data
+=================*/
+
+.roomLobby {
+    position: absolute;
+    background-color: var(--blue);
+
+    font-size: 1.3rem; 
+
+    width: 250px;
+    height: 300px; 
+    margin-top: 20px;
+    left: calc(50% - 125px);
+
+    border-radius: 2rem;
+}
+
+.roomLobby .roomLobby__subHeader {
+    padding: 10px;
+}
+
+.roomLobby .roomLobby__admin {
+    font-family: var(--selected_font);
+    font-size: 1.4rem;
+}
+
+.roomLobby .roomLobby__startGame {
+  position: absolute;
+  color: white;
+  background-color: rgba(255, 11, 11, 0.836);
+
+  font-family: var(--selected_font);
+  font-size: 1rem;
+  letter-spacing: 2px;
+
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: .6rem;
+  padding: 5px 10px;
+}
+
+.roomLobby .roomLobby__startGame:active {
+  border: 2px rgb(168, 0, 0) solid;
+  font-size: .95rem;
+  padding: 1px 11px;
+  bottom: 27px;
+}
+
+/*==============
+    Responsive
+================*/
+
+@media only screen and (min-width: 660px) {
+  .logBlock {
+    width: 480px;
+  }
+
+  .logBlock .trivia {
+    font-size: 70px;
+    margin: 10px;
+  }
+
+  .logBlock .logButton {
+    font-size: 1.2rem;
+
+    margin: 15px 5px 20px 5px;
+    padding: 7px 0;
+    width: 124px;
+
+    border-radius: 0.7rem;
+  }
+
+  .logBlock .logButton:active {
+    padding: 6px 0;
+    margin: 14px 5px 19px 5px;
+  }
+
+  .menuOption {
+    height: 90px;
+    font-size: 1.4rem;
+    line-height: 90px;
+    margin: auto 15px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .menuOption {
+    font-size: 1.5rem;
+    margin: auto 15px;
+  }
+
+  .menu {
+    width: 680px;
+  }
+}
